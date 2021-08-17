@@ -1,9 +1,8 @@
 
 package modelo;
 
-import org.uao.cg.data.Valor;
-import org.uao.cg.data.core.OperacionesPilas;
-import org.uao.cg.data.core.Pila;
+import datos.dados;
+
 
 /**
  *
@@ -21,25 +20,25 @@ public class Tools
      * @return 
      */
     //<editor-fold defaultstate="collapsed" desc="Metodo :: String convertirPilaAHtml(Pila<Valor>)">
-    public static String convertirPilaAHtml(Pila<Valor> p)
+    public static String convertirPilaAHtml(Pila<dados> p)
     {
         StringBuilder sb = new StringBuilder("<html>");
-        Pila<Valor> q = OperacionesPilas.duplicar(p);
+        Pila<dados> q = OperacionesPilas.duplicarPila(p);
         
         sb.append("<noscript>").append("</noscript>");
         
-        if (!q.estaVacio())
+        if (!q.estaVacia())
         {
             sb.append("<table align=\"center\" border=\"2\">");
             sb.append("<tr>").append("<th>").append("Texto").append("</th>").append("</tr>");
             do
             {
-                Valor e = q.desapilar();
+                dados e = q.desapilar();
                 sb.append("<tr>").append("<td>");
                 sb.append(e.getTexto());
                 sb.append("</td>").append("</tr>");
             }
-            while (!q.estaVacio());
+            while (!q.estaVacia());
             sb.append("</table>");
         }
         else

@@ -74,6 +74,7 @@ public class dados extends Base{
     public String toString() {
         return "dados{" + "valor_1=" + valor_1 + ", valor_2=" + valor_2 + '}';
     }
+
     
     
 

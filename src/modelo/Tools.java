@@ -35,7 +35,7 @@ public class Tools
             {
                 dados e = q.desapilar();
                 sb.append("<tr>").append("<td>");
-                sb.append(e.getTexto());
+                sb.append(e.getValor_1());
                 sb.append("</td>").append("</tr>");
             }
             while (!q.estaVacia());
@@ -60,7 +60,7 @@ public class Tools
      * @return 
      */
     //<editor-fold defaultstate="collapsed" desc="String convertirPilaAHtml(Pila<Valor> p, String texto)">
-    public static String convertirPilaAHtml(Pila<Valor> p, String texto)
+    public static String convertirPilaAHtml(Pila<dados> p, String texto)
     {
         String html = "<br><center>Se retiro " + texto + "</center></br>";
         StringBuilder sb = new StringBuilder(convertirPilaAHtml(p));
